@@ -1,164 +1,721 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Telegram Group Rules and Regulations</title>
-  <style>
-    /* General Styles */
-    body {
-      font-family: 'Arial', sans-serif;
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f9;
-      color: #333;
-    }
-
-    /* Container */
-    .container {
-      max-width: 800px;
-      margin: 50px auto;
-      padding: 20px;
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    /* Headings */
-    h1 {
-      font-size: 2.5rem;
-      color: #2c3e50;
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    h2 {
-      font-size: 2rem;
-      color: #34495e;
-      margin-top: 30px;
-      margin-bottom: 15px;
-      border-bottom: 2px solid #3498db;
-      padding-bottom: 5px;
-    }
-
-    h3 {
-      font-size: 1.5rem;
-      color: #2980b9;
-      margin-top: 25px;
-      margin-bottom: 10px;
-    }
-
-    /* Paragraphs */
-    p {
-      font-size: 1.1rem;
-      color: #555;
-      margin-bottom: 15px;
-    }
-
-    /* List Styles */
-    ul {
-      margin-bottom: 20px;
-    }
-
-    ul li {
-      margin-bottom: 10px;
-      padding-left: 10px;
-      list-style-type: disc;
-    }
-
-    /* Highlight */
-    .highlight {
-      background-color: #ecf0f1;
-      padding: 10px;
-      border-left: 4px solid #3498db;
-      margin-bottom: 20px;
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      margin-top: 40px;
-      font-size: 0.9rem;
-      color: #777;
-    }
-
-    footer a {
-      color: #3498db;
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthy Ageing 2025 | Preventing Frailty & Falls</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2C7DA0;
+            --secondary: #A5D8DD;
+            --accent: #FF9E44;
+            --dark: #333333;
+            --light: #F8F9FA;
+            --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--dark);
+            background-color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background: var(--gradient);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 0.5rem;
+            color: var(--accent);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 80vh;
+            background: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero-content {
+            position: relative;
+            color: white;
+            max-width: 600px;
+            padding: 2rem;
+            animation: fadeIn 1.5s ease;
+        }
+        
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background: #FF8B24;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Sections */
+        section {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+        
+        /* About Section */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Cards */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .card:hover .card-img img {
+            transform: scale(1.1);
+        }
+        
+        .card-content {
+            padding: 1.5rem;
+        }
+        
+        .card h3 {
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+        
+        .card p {
+            margin: 1rem 0;
+        }
+        
+        /* Stats */
+        .stats {
+            background: var(--gradient);
+            color: white;
+            text-align: center;
+            padding: 4rem 0;
+        }
+        
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        .stat-item {
+            padding: 1.5rem;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Prevention */
+        .prevention {
+            background: var(--light);
+        }
+        
+        .accordion {
+            margin-top: 2rem;
+        }
+        
+        .accordion-item {
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .accordion-header {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            background: var(--secondary);
+            color: var(--dark);
+        }
+        
+        .accordion-content {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .accordion-content.active {
+            max-height: 300px;
+            padding: 1.5rem;
+        }
+        
+        /* CTA */
+        .cta {
+            text-align: center;
+            background: url('https://images.unsplash.com/photo-1504813184591-01572f98c85f?ixlib=rb-4.0.3') no-repeat center center/cover;
+            position: relative;
+            color: white;
+        }
+        
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(44, 125, 160, 0.9);
+        }
+        
+        .cta-content {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+        
+        .footer-section p {
+            margin-bottom: 1rem;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            color: var(--accent);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        
+        .animate.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Telegram Group Rules and Regulations</h1>
-    <p>Welcome to our Telegram group! To ensure a positive and productive environment for all members, please follow these rules and guidelines. Failure to comply may result in warnings or removal from the group.</p>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <i class="fas fa-heartbeat"></i>
+                    <span>AgeWell</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#importance">Importance</a></li>
+                    <li><a href="#prevention">Prevention</a></li>
+                    <li><a href="#resources">Resources</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
 
-    <div class="highlight">
-      <p>Remember: This group is a place for respectful discussion, learning, and collaboration. Let's keep it friendly and inclusive for everyone!</p>
-    </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Healthy Ageing: Preventing Frailty & Falls</h1>
+                <p>Join the global initiative on World Physiotherapy Day 2025 to promote healthy ageing through research and physiotherapy.</p>
+                <a href="#resources" class="btn">Learn More</a>
+            </div>
+        </div>
+    </section>
 
-    <h2>1. General Rules</h2>
-    <h3>1.1 Respect Everyone</h3>
-    <p>Treat all members with respect. Harassment, hate speech, or any form of discrimination will not be tolerated.</p>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About the Initiative</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>World Physiotherapy Day 2025 focuses on "Healthy Ageing" with a specific emphasis on preventing frailty and falls in older adults. This global initiative highlights the crucial role of physiotherapy in promoting active, independent living throughout the ageing process.</p>
+                    <p>Through evidence-based interventions, exercise programs, and fall prevention strategies, physiotherapists worldwide are working to enhance mobility, strength, and balance in older populations, reducing the risk of frailty and fall-related injuries.</p>
+                    <a href="#" class="btn">Get Involved</a>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3" alt="Senior couple exercising">
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <h3>1.2 No Spamming</h3>
-    <p>Do not send unsolicited messages, advertisements, or repetitive content. This includes excessive use of emojis, stickers, or GIFs.</p>
+    <!-- Importance Section -->
+    <section id="importance" class="importance">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why It Matters</h2>
+            </div>
+            <div class="cards">
+                <div class="card animate">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1534258936925-c58bed479fcb?ixlib=rb-4.0.3" alt="Elderly woman exercising">
+                    </div>
+                    <div class="card-content">
+                        <h3>Frailty Prevention</h3>
+                        <p>Frailty affects millions of older adults worldwide, leading to loss of independence and increased healthcare needs. Targeted exercise programs can significantly reduce frailty progression.</p>
+                        <a href="#" class="btn">Read More</a>
+                    </div>
+                </div>
+                <div class="card animate">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1544364631-99c03f53cdfd?ixlib=rb-4.0.3" alt="Physiotherapist assisting senior">
+                    </div>
+                    <div class="card-content">
+                        <h3>Fall Reduction</h3>
+                        <p>Falls are a leading cause of injury among older adults. Balance training and strength exercises can reduce fall risk by up to 40%, preventing fractures and other serious injuries.</p>
+                        <a href="#" class="btn">Read More</a>
+                    </div>
+                </div>
+                <div class="card animate">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?ixlib=rb-4.0.3" alt="Group of seniors socializing">
+                    </div>
+                    <div class="card-content">
+                        <h3>Quality of Life</h3>
+                        <p>Maintaining physical function through ageing enables continued participation in meaningful activities, social engagement, and independence, all crucial for mental health and wellbeing.</p>
+                        <a href="#" class="btn">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <h3>1.3 Stay On Topic</h3>
-    <p>Keep discussions relevant to the group's purpose. Off-topic posts may be removed by moderators.</p>
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-number" id="stat1">0</div>
+                    <div class="stat-text">Adults over 60 by 2050</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="stat2">0</div>
+                    <div class="stat-text">Falls occur annually</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="stat3">0</div>
+                    <div class="stat-text">Frailty reduction with exercise</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="stat4">0</div>
+                    <div class="stat-text">Countries participating</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <h2>2. Content Guidelines</h2>
-    <h3>2.1 No NSFW Content</h3>
-    <p>Sharing explicit, violent, or inappropriate content is strictly prohibited.</p>
+    <!-- Prevention Section -->
+    <section id="prevention" class="prevention">
+        <div class="container">
+            <div class="section-title">
+                <h2>Prevention Strategies</h2>
+            </div>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>Strength Training Exercises</span>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Regular strength training helps maintain muscle mass, bone density, and functional ability. Focus on major muscle groups with exercises like squats, leg presses, and resistance band activities at least twice weekly.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>Balance Training</span>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Balance exercises such as single-leg stands, heel-to-toe walking, and Tai Chi can significantly improve stability and reduce fall risk. Practice these daily for best results.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>Nutrition for Healthy Ageing</span>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Adequate protein intake, vitamin D, calcium, and proper hydration are essential for maintaining muscle mass, bone health, and overall physical function in older adults.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>Home Safety Assessment</span>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Remove tripping hazards, improve lighting, install grab bars in bathrooms, and ensure pathways are clear to create a safe living environment that prevents falls.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <h3>2.2 Copyrighted Material</h3>
-    <p>Do not share copyrighted material without proper attribution or permission.</p>
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Join the Movement on World Physiotherapy Day</h2>
+                <p>September 8, 2025</p>
+                <p>Participate in events, workshops, and awareness campaigns promoting healthy ageing in your community.</p>
+                <a href="#" class="btn">Find Events Near You</a>
+            </div>
+        </div>
+    </section>
 
-    <h3>2.3 Fact-Checking</h3>
-    <p>Ensure the information you share is accurate and reliable. Misinformation can harm the community.</p>
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>AgeWell Initiative</h3>
+                    <p>Promoting healthy ageing through evidence-based practices and global collaboration.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <p><a href="#about">About</a></p>
+                    <p><a href="#importance">Importance</a></p>
+                    <p><a href="#prevention">Prevention</a></p>
+                    <p><a href="#resources">Resources</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Wellness Ave, Health City</p>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> info@agewellinitiative.org</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AgeWell Initiative. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
-    <h2>3. Behavior and Conduct</h2>
-    <h3>3.1 No Trolling</h3>
-    <p>Do not engage in trolling, flaming, or any behavior intended to provoke or upset others.</p>
-
-    <h3>3.2 Be Polite</h3>
-    <p>Use polite language and avoid aggressive or confrontational tones.</p>
-
-    <h3>3.3 Respect Privacy</h3>
-    <p>Do not share personal information about yourself or others without consent.</p>
-
-    <h2>4. Moderation and Enforcement</h2>
-    <h3>4.1 Moderator Authority</h3>
-    <p>Moderators have the final say in enforcing rules. Respect their decisions and follow their instructions.</p>
-
-    <h3>4.2 Reporting Issues</h3>
-    <p>If you encounter any issues or rule violations, report them to a moderator immediately.</p>
-
-    <h3>4.3 Consequences</h3>
-    <p>Violations of these rules may result in warnings, temporary bans, or permanent removal from the group.</p>
-
-    <h2>5. Additional Guidelines</h2>
-    <h3>5.1 Use Appropriate Language</h3>
-    <p>Keep the language clean and professional. Avoid excessive slang or offensive terms.</p>
-
-    <h3>5.2 No Self-Promotion</h3>
-    <p>Do not promote your own content, services, or products without prior approval from moderators.</p>
-
-    <h3>5.3 Be Helpful</h3>
-    <p>Contribute positively to discussions and help others when you can. This is a community, and we thrive on mutual support.</p>
-
-    <div class="highlight">
-      <p>Thank you for following these rules! By adhering to these guidelines, we can create a welcoming and enjoyable environment for everyone.</p>
-    </div>
-  </div>
-
-  <footer>
-    <p>© 2023 Your Group Name. All rights reserved. | <a href="https://t.me/yourgroup">Join Our Telegram Group</a></p>
-  </footer>
+    <script>
+        // Animations on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.animate');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            animatedElements.forEach(element => {
+                observer.observe(element);
+            });
+            
+            // Accordion functionality
+            const accordionHeaders = document.querySelectorAll('.accordion-header');
+            
+            accordionHeaders.forEach(header => {
+                header.addEventListener('click', () => {
+                    const content = header.nextElementSibling;
+                    const icon = header.querySelector('i');
+                    
+                    // Toggle active class
+                    content.classList.toggle('active');
+                    
+                    // Change icon
+                    if (content.classList.contains('active')) {
+                        icon.classList.remove('fa-plus');
+                        icon.classList.add('fa-minus');
+                    } else {
+                        icon.classList.remove('fa-minus');
+                        icon.classList.add('fa-plus');
+                    }
+                });
+            });
+            
+            // Animated statistics
+            function animateValue(id, start, end, duration) {
+                const obj = document.getElementById(id);
+                let startTimestamp = null;
+                const step = (timestamp) => {
+                    if (!startTimestamp) startTimestamp = timestamp;
+                    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                    const value = Math.floor(progress * (end - start) + start);
+                    obj.innerHTML = value.toLocaleString();
+                    if (progress < 1) {
+                        window.requestAnimationFrame(step);
+                    }
+                };
+                window.requestAnimationFrame(step);
+            }
+            
+            // Trigger stats animation when in view
+            const statsObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateValue('stat1', 0, 2100, 2000); // 2.1 billion
+                        animateValue('stat2', 0, 37, 2000); // 37 million
+                        animateValue('stat3', 0, 40, 2000); // 40%
+                        animateValue('stat4', 0, 120, 2000); // 120 countries
+                        statsObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            statsObserver.observe(document.querySelector('.stats'));
+        });
+    </script>
 </body>
 </html>
