@@ -261,6 +261,45 @@
             margin: 1rem 0;
         }
         
+        /* Agenda Section */
+        .agenda {
+            background-color: #f9f9f9;
+        }
+        
+        .agenda-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .agenda-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .agenda-qr {
+            flex: 0 0 auto;
+            text-align: center;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .agenda-qr img {
+            width: 200px;
+            height: 200px;
+            display: block;
+            margin: 0 auto 1rem;
+        }
+        
+        .agenda-qr p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
         /* Stats */
         .stats {
             background: var(--gradient);
@@ -425,12 +464,16 @@
                 font-size: 2.5rem;
             }
             
-            .about-content {
+            .about-content, .agenda-content {
                 flex-direction: column;
             }
             
             .section-title h2 {
                 font-size: 2rem;
+            }
+            
+            .agenda-qr {
+                margin-top: 2rem;
             }
         }
     </style>
@@ -447,6 +490,7 @@
                 <ul class="nav-links">
                     <li><a href="#about">About</a></li>
                     <li><a href="#importance">Importance</a></li>
+                    <li><a href="#agenda">Agenda</a></li>
                     <li><a href="#prevention">Prevention</a></li>
                     <li><a href="#resources">Resources</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -524,6 +568,34 @@
                         <p>Maintaining physical function through ageing enables continued participation in meaningful activities, social engagement, and independence, all crucial for mental health and wellbeing.</p>
                         <a href="#" class="btn">Read More</a>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agenda Section -->
+    <section id="agenda" class="agenda">
+        <div class="container">
+            <div class="section-title">
+                <h2>Event Agenda</h2>
+            </div>
+            <div class="agenda-content">
+                <div class="agenda-text">
+                    <h3>World Physiotherapy Day 2025</h3>
+                    <p>Join us on September 8, 2025, for a day dedicated to promoting healthy ageing and preventing frailty and falls through physiotherapy.</p>
+                    <p><strong>Key Events:</strong></p>
+                    <ul>
+                        <li>9:00 AM - Opening Keynote: Global Perspectives on Healthy Ageing</li>
+                        <li>10:30 AM - Workshop: Fall Prevention Strategies</li>
+                        <li>1:00 PM - Expert Panel: Innovations in Physiotherapy for Ageing Populations</li>
+                        <li>3:00 PM - Practical Session: Exercise Demonstrations for Seniors</li>
+                        <li>5:00 PM - Networking Reception</li>
+                    </ul>
+                    <p>Scan the QR code to download the full agenda or register for the event.</p>
+                </div>
+                <div class="agenda-qr">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://www.kgcollegeofphysiotherapy.com/events/wptday2025" alt="QR Code for Event Agenda">
+                    <p>Scan to view full agenda</p>
                 </div>
             </div>
         </div>
@@ -630,8 +702,8 @@
                     <h3>Quick Links</h3>
                     <p><a href="#about">About</a></p>
                     <p><a href="#importance">Importance</a></p>
+                    <p><a href="#agenda">Agenda</a></p>
                     <p><a href="#prevention">Prevention</a></p>
-                    <p><a href="#resources">Resources</a></p>
                 </div>
                 <div class="footer-section">
                     <h3>Contact Us</h3>
