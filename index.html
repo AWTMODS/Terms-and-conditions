@@ -27,7 +27,7 @@
             padding: 20px;
         }
 
-        /* Header Styles */
+        /* Header */
         header {
             text-align: center;
             padding: 40px 20px;
@@ -41,28 +41,26 @@
         }
 
         .qr-code {
-    position: relative;   /* remove absolute */
-    margin: 0 auto 20px;  /* center align */
-    width: 120px;
-    height: 120px;
-    background: white;
-    padding: 8px;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #ddd;
-}
+            margin: 0 auto 20px;
+            width: 120px;
+            height: 120px;
+            background: white;
+            padding: 8px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #ddd;
+        }
 
         .qr-code canvas {
-            width: 84px !important;
-            height: 84px !important;
+            width: 100px !important;
+            height: 100px !important;
         }
 
         h1 {
-            font-size: 4rem;
+            font-size: 3rem;
             color: #8B4513;
             margin-bottom: 10px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
@@ -70,49 +68,31 @@
         }
 
         h2 {
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: #A52A2A;
             margin-bottom: 30px;
-            font-weight: 300;
+            font-weight: 400;
         }
 
-        /* Timeline Styles */
+        /* Timeline */
         .timeline {
             position: relative;
             max-width: 800px;
             margin: 40px auto;
         }
 
-.timeline::after {
-    content: '';
-    position: absolute;
-    width: 6px;
-    background-color: #8B4513;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    margin-left: -3px;
-    border-radius: 10px;
-    z-index: 0; /* make line go behind icons */
-}
-
-.timeline-icon {
-    position: absolute;
-    width: 50px;   /* bigger circle */
-    height: 50px;
-    background: #8B4513;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1; /* keep icons on top of line */
-    font-size: 20px; /* bigger font inside circle */
-}
-
-                
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: #8B4513;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+            border-radius: 10px;
+            z-index: 0;
+        }
 
         .timeline-item {
             padding: 10px 40px;
@@ -174,92 +154,24 @@
             box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.1);
         }
 
-
-
-        /* Special Effects */
-        .glowing {
-            position: relative;
-        }
-
-        .glowing::before {
-            content: '';
+        .timeline-icon {
             position: absolute;
-            top: -5px;
-            left: -5px;
-            right: -5px;
-            bottom: -5px;
-            background: linear-gradient(45deg, #ff8c00, #ffd700, #ff8c00);
-            border-radius: 12px;
-            z-index: -1;
-            animation: glowing 2s ease-in-out infinite alternate;
-            opacity: 0;
-            transition: opacity 0.3s ease;
+            width: 50px;
+            height: 50px;
+            background: #8B4513;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            font-size: 20px;
+            left: 50%; /* perfectly centered over line */
         }
 
-        .glowing.visible::before {
-            opacity: 1;
-        }
-
-        @keyframes glowing {
-            0% {
-                opacity: 0.6;
-                filter: blur(15px);
-            }
-            100% {
-                opacity: 0.8;
-                filter: blur(25px);
-            }
-        }
-
-        .music-waves {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .music-waves::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,50 L15,50 L20,30 L25,70 L30,40 L35,60 L40,35 L45,65 L50,50 L65,50" fill="none" stroke="rgba(255,140,0,0.2)" stroke-width="2"/></svg>');
-            background-size: 200% 100%;
-            opacity: 0;
-            z-index: 0;
-            animation: musicWave 3s linear infinite;
-        }
-
-        .music-waves.visible::after {
-            opacity: 0.6;
-        }
-
-        @keyframes musicWave {
-            0% {
-                background-position: 0% 50%;
-            }
-            100% {
-                background-position: 200% 50%;
-            }
-        }
-
-        .gift-icon {
-            display: inline-block;
-            margin-left: 10px;
-            color: #e91e63;
-            animation: bounce 2s infinite;
-        }
-
-        @keyframes bounce {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-
-        /* Footer Styles */
+        /* Footer */
         footer {
             text-align: center;
             padding: 40px 20px;
@@ -272,8 +184,7 @@
         }
 
         .footer-qr {
-            display: inline-block;
-            margin-top: 20px;
+            margin: 20px auto 0;
             background: white;
             padding: 10px;
             border-radius: 8px;
@@ -297,15 +208,15 @@
             margin-bottom: 20px;
         }
 
-        /* Responsive Design */
+        /* Responsive */
         @media screen and (max-width: 768px) {
             .timeline::after {
-                left: 31px;
+                left: 25px;
             }
 
             .timeline-item {
                 width: 100%;
-                padding-left: 70px;
+                padding-left: 60px;
                 padding-right: 25px;
             }
 
@@ -313,28 +224,14 @@
                 left: 0;
             }
 
-            .timeline-item:nth-child(odd) .timeline-icon,
-            .timeline-item:nth-child(even) .timeline-icon {
-                left: 11px;
+            .timeline-icon {
+                left: 25px;
+                transform: translateY(-50%);
             }
 
-            .timeline-item:nth-child(odd) .timeline-content::after,
-            .timeline-item:nth-child(even) .timeline-content::after {
-                left: -10px;
-                right: auto;
-            }
-
-            .qr-code {
-                position: relative;
-                margin: 0 auto 20px;
-            }
-
-            h1 {
-                font-size: 3rem;
-            }
-
-            h2 {
-                font-size: 1.5rem;
+            .timeline-item .timeline-content::after {
+                left: -10px !important;
+                right: auto !important;
             }
         }
     </style>
@@ -351,102 +248,48 @@
 
         <section class="timeline">
             <div class="timeline-item">
-                <div class="timeline-icon">
-                    <i class="fas fa-microphone"></i>
-                </div>
-                <div class="timeline-content">
-                    <h3>Welcome Speech</h3>
-                </div>
+                <div class="timeline-icon"><i class="fas fa-microphone"></i></div>
+                <div class="timeline-content"><h3>Welcome Speech</h3></div>
             </div>
-
             <div class="timeline-item">
-                <div class="timeline-icon">
-                    <i class="fas fa-lightbulb"></i>
-                </div>
-                <div class="timeline-content glowing">
-                    <h3>Lamp Lighting</h3>
-                </div>
+                <div class="timeline-icon"><i class="fas fa-lightbulb"></i></div>
+                <div class="timeline-content"><h3>Lamp Lighting</h3></div>
             </div>
-
             <div class="timeline-item">
-                <div class="timeline-icon">
-                    <i class="fas fa-music"></i>
-                </div>
-                <div class="timeline-content music-waves">
-                    <h3>Welcome Dance</h3>
-                </div>
+                <div class="timeline-icon"><i class="fas fa-music"></i></div>
+                <div class="timeline-content"><h3>Welcome Dance</h3></div>
             </div>
-
             <div class="timeline-item">
-                <div class="timeline-icon">
-                    <i class="fas fa-comment"></i>
-                </div>
-                <div class="timeline-content">
-                    <h3>Thanksgiving Speech</h3>
-                </div>
+                <div class="timeline-icon"><i class="fas fa-comment"></i></div>
+                <div class="timeline-content"><h3>Thanksgiving Speech</h3></div>
             </div>
-
             <div class="timeline-item">
-                <div class="timeline-icon">
-                    <i class="fas fa-history"></i>
-                </div>
-                <div class="timeline-content">
-                    <h3>MPT yr Journey</h3>
-                </div>
+                <div class="timeline-icon"><i class="fas fa-history"></i></div>
+                <div class="timeline-content"><h3>MPT yr Journey</h3></div>
             </div>
-
             <div class="timeline-item">
-                <div class="timeline-icon">
-                    <i class="fas fa-star"></i>
-                </div>
-                <div class="timeline-content glowing">
-                    <h3>Special Performance</h3>
-                </div>
+                <div class="timeline-icon"><i class="fas fa-star"></i></div>
+                <div class="timeline-content"><h3>Special Performance</h3></div>
             </div>
-
             <div class="timeline-item">
-                <div class="timeline-icon">
-                    <i class="fas fa-microphone-alt"></i>
-                </div>
-                <div class="timeline-content">
-                    <h3>Speech (MPT)</h3>
-                </div>
+                <div class="timeline-icon"><i class="fas fa-microphone-alt"></i></div>
+                <div class="timeline-content"><h3>Speech (MPT)</h3></div>
             </div>
-
             <div class="timeline-item">
-                <div class="timeline-icon">
-                    <i class="fas fa-handshake"></i>
-                </div>
-                <div class="timeline-content">
-                    <h3>Thanks Giving Speech</h3>
-                </div>
+                <div class="timeline-icon"><i class="fas fa-handshake"></i></div>
+                <div class="timeline-content"><h3>Thanks Giving Speech</h3></div>
             </div>
-
             <div class="timeline-item">
-                <div class="timeline-icon">
-                    <i class="fas fa-gift"></i>
-                </div>
-                <div class="timeline-content">
-                    <h3>Gift Presenting <i class="fas fa-gift gift-icon"></i></h3>
-                </div>
+                <div class="timeline-icon"><i class="fas fa-gift"></i></div>
+                <div class="timeline-content"><h3>Gift Presenting</h3></div>
             </div>
-
             <div class="timeline-item">
-                <div class="timeline-icon">
-                    <i class="fas fa-chalkboard-teacher"></i>
-                </div>
-                <div class="timeline-content">
-                    <h3>Principal Sir's Speech</h3>
-                </div>
+                <div class="timeline-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                <div class="timeline-content"><h3>Principal Sir's Speech</h3></div>
             </div>
-
             <div class="timeline-item">
-                <div class="timeline-icon">
-                    <i class="fas fa-thumbs-up"></i>
-                </div>
-                <div class="timeline-content">
-                    <h3>Vote of Thanks</h3>
-                </div>
+                <div class="timeline-icon"><i class="fas fa-thumbs-up"></i></div>
+                <div class="timeline-content"><h3>Vote of Thanks</h3></div>
             </div>
         </section>
 
@@ -457,20 +300,17 @@
     </div>
 
     <script>
-        // Generate QR codes
         const currentUrl = window.location.href;
-        
-        // Header QR Code
+
         new QRCode(document.getElementById("header-qr"), {
             text: currentUrl,
-            width: 84,
-            height: 84,
+            width: 100,
+            height: 100,
             colorDark: "#8B4513",
             colorLight: "#ffffff",
             correctLevel: QRCode.CorrectLevel.H
         });
-        
-        // Footer QR Code
+
         new QRCode(document.getElementById("footer-qr"), {
             text: currentUrl,
             width: 120,
@@ -480,42 +320,19 @@
             correctLevel: QRCode.CorrectLevel.H
         });
 
-        // Scroll animation for timeline items
+        // Animate timeline on scroll
         document.addEventListener('DOMContentLoaded', function() {
             const timelineItems = document.querySelectorAll('.timeline-item');
-            
             function checkVisibility() {
                 timelineItems.forEach(item => {
                     const position = item.getBoundingClientRect();
-                    
-                    // If item is in viewport
                     if(position.top < window.innerHeight - 100 && position.bottom >= 0) {
                         item.classList.add('visible');
                     }
                 });
             }
-            
-            // Check on load and scroll
             checkVisibility();
             window.addEventListener('scroll', checkVisibility);
-            
-            // Add special effect classes when items become visible
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        if (entry.target.querySelector('.glowing')) {
-                            entry.target.querySelector('.glowing').classList.add('visible');
-                        }
-                        if (entry.target.querySelector('.music-waves')) {
-                            entry.target.querySelector('.music-waves').classList.add('visible');
-                        }
-                    }
-                });
-            }, { threshold: 0.5 });
-            
-            document.querySelectorAll('.timeline-item').forEach(item => {
-                observer.observe(item);
-            });
         });
     </script>
 </body>
