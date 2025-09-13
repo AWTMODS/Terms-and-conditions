@@ -41,21 +41,20 @@
         }
 
         .qr-code {
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100px;
-            height: 100px;
-            background: white;
-            padding: 8px;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            z-index: 10;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid #ddd;
-        }
+    position: relative;   /* remove absolute */
+    margin: 0 auto 20px;  /* center align */
+    width: 120px;
+    height: 120px;
+    background: white;
+    padding: 8px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ddd;
+}
 
         .qr-code canvas {
             width: 84px !important;
@@ -113,28 +112,7 @@
     font-size: 20px; /* bigger font inside circle */
 }
 
-                .timeline-icon {
-            position: absolute;
-            width: 40px;
-            height: 40px;
-            background: #8B4513;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 1;
-        }
-
-        .timeline-item:nth-child(odd) .timeline-icon {
-            right: -20px;
-        }
-
-        .timeline-item:nth-child(even) .timeline-icon {
-            left: -20px;
-        }
+                
 
         .timeline-item {
             padding: 10px 40px;
