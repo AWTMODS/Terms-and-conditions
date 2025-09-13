@@ -113,6 +113,29 @@
     font-size: 20px; /* bigger font inside circle */
 }
 
+                .timeline-icon {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: #8B4513;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-icon {
+            right: -20px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-icon {
+            left: -20px;
+        }
+
         .timeline-item {
             padding: 10px 40px;
             position: relative;
