@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thanks Giving - Agenda</title>
+    <title>Telegram Channels Hub</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <style>
         * {
             margin: 0;
@@ -14,224 +13,214 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
+        :root {
+            --telegram-blue: #0088cc;
+            --telegram-light-blue: #2aabee;
+            --dark-bg: #0f1419;
+            --card-bg: #1e2732;
+            --text-light: #e6e6e6;
+            --text-muted: #8a98a4;
+        }
+
         body {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            color: #333;
-            line-height: 1.6;
-            overflow-x: hidden;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            min-height: 100vh;
+            padding: 20px;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
         }
 
-        /* Header */
         header {
             text-align: center;
-            padding: 40px 20px;
-            position: relative;
+            padding: 40px 0;
+            margin-bottom: 30px;
         }
 
-        .header-content {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .qr-code {
-            margin: 0 auto 20px;
-            width: 120px;
-            height: 120px;
-            background: white;
-            padding: 8px;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid #ddd;
-        }
-
-        .qr-code canvas {
-            width: 100px !important;
-            height: 100px !important;
+        .logo {
+            font-size: 2.5rem;
+            color: var(--telegram-light-blue);
+            margin-bottom: 15px;
         }
 
         h1 {
-            font-size: 3rem;
-            color: #8B4513;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-            letter-spacing: 2px;
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, var(--telegram-blue), var(--telegram-light-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        h2 {
-            font-size: 1.8rem;
-            color: #A52A2A;
-            margin-bottom: 30px;
-            font-weight: 400;
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
         }
 
-        /* Timeline */
-        .timeline {
-            position: relative;
-            max-width: 800px;
-            margin: 40px auto;
+        .channels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
         }
 
-        .timeline::after {
-            content: '';
-            position: absolute;
-            width: 6px;
-            background-color: #8B4513;
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -3px;
-            border-radius: 10px;
-            z-index: 0;
+        .channel-card {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            padding: 25px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
 
-        .timeline-item {
-            padding: 10px 40px;
-            position: relative;
-            width: 50%;
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.8s ease;
-        }
-
-        .timeline-item.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .timeline-item:nth-child(odd) {
-            left: 0;
-        }
-
-        .timeline-item:nth-child(even) {
-            left: 50%;
-        }
-
-        .timeline-content {
-            padding: 20px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            position: relative;
-            transition: all 0.3s ease;
-        }
-
-        .timeline-content:hover {
+        .channel-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
         }
 
-        .timeline-item:nth-child(odd) .timeline-content::after {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            right: -10px;
-            background-color: white;
-            top: 50%;
-            transform: translateY(-50%) rotate(45deg);
-            box-shadow: 5px -5px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .timeline-item:nth-child(even) .timeline-content::after {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            left: -10px;
-            background-color: white;
-            top: 50%;
-            transform: translateY(-50%) rotate(45deg);
-            box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .timeline-icon {
-            position: absolute;
-            width: 50px;
-            height: 50px;
-            background: #8B4513;
+        .channel-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--telegram-blue), var(--telegram-light-blue));
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .channel-name {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .channel-description {
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            flex-grow: 1;
+        }
+
+        .members {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .members i {
+            margin-right: 5px;
+            color: var(--telegram-light-blue);
+        }
+
+        .join-btn {
+            background: linear-gradient(135deg, var(--telegram-blue), var(--telegram-light-blue));
             color: white;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 1;
-            font-size: 20px;
-            left: 50%; /* perfectly centered over line */
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            margin-top: 60px;
-            background: rgba(255, 255, 255, 0.7);
-            border-radius: 15px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .footer-qr {
-            margin: 20px auto 0;
-            background: white;
-            padding: 10px;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            width: 140px;
-            height: 140px;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 1px solid #ddd;
+            width: 100%;
         }
 
-        .footer-qr canvas {
-            width: 120px !important;
-            height: 120px !important;
+        .join-btn i {
+            margin-right: 8px;
+            font-size: 1.1rem;
         }
 
-        .closing-note {
-            font-size: 1.5rem;
-            color: #8B4513;
+        .join-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(42, 171, 238, 0.4);
+        }
+
+        .add-channel-section {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .add-channel-section h2 {
             margin-bottom: 20px;
+            color: var(--telegram-light-blue);
         }
 
-        /* Responsive */
-        @media screen and (max-width: 768px) {
-            .timeline::after {
-                left: 25px;
-            }
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
 
-            .timeline-item {
-                width: 100%;
-                padding-left: 60px;
-                padding-right: 25px;
-            }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
 
-            .timeline-item:nth-child(even) {
-                left: 0;
-            }
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border-radius: 8px;
+            border: 1px solid #3a4655;
+            background-color: #2c3845;
+            color: var(--text-light);
+            font-size: 1rem;
+        }
 
-            .timeline-icon {
-                left: 25px;
-                transform: translateY(-50%);
-            }
+        .form-control:focus {
+            outline: none;
+            border-color: var(--telegram-light-blue);
+        }
 
-            .timeline-item .timeline-content::after {
-                left: -10px !important;
-                right: auto !important;
+        .add-btn {
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .add-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: var(--text-muted);
+            border-top: 1px solid #2a2f35;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .channels-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
             }
         }
     </style>
@@ -239,100 +228,158 @@
 <body>
     <div class="container">
         <header>
-            <div class="header-content">
-                <div id="header-qr" class="qr-code"></div>
-                <h1>Thanks Giving</h1>
-                <h2>Agenda</h2>
+            <div class="logo">
+                <i class="fab fa-telegram"></i>
             </div>
+            <h1>Telegram Channels Hub</h1>
+            <p class="subtitle">Discover and join amazing Telegram channels. Stay updated with communities that matter to you.</p>
         </header>
 
-        <section class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-icon"><i class="fas fa-microphone"></i></div>
-                <div class="timeline-content"><h3>Welcome Speech</h3></div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-icon"><i class="fas fa-lightbulb"></i></div>
-                <div class="timeline-content"><h3>Lamp Lighting</h3></div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-icon"><i class="fas fa-music"></i></div>
-                <div class="timeline-content"><h3>Welcome Dance</h3></div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-icon"><i class="fas fa-comment"></i></div>
-                <div class="timeline-content"><h3>Thanksgiving Speech</h3></div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-icon"><i class="fas fa-history"></i></div>
-                <div class="timeline-content"><h3>MPT yr Journey</h3></div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-icon"><i class="fas fa-star"></i></div>
-                <div class="timeline-content"><h3>Special Performance</h3></div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-icon"><i class="fas fa-microphone-alt"></i></div>
-                <div class="timeline-content"><h3>Speech (MPT)</h3></div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-icon"><i class="fas fa-handshake"></i></div>
-                <div class="timeline-content"><h3>Thanks Giving Speech</h3></div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-icon"><i class="fas fa-gift"></i></div>
-                <div class="timeline-content"><h3>Gift Presenting</h3></div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-icon"><i class="fas fa-chalkboard-teacher"></i></div>
-                <div class="timeline-content"><h3>Principal Sir's Speech</h3></div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-icon"><i class="fas fa-thumbs-up"></i></div>
-                <div class="timeline-content"><h3>Vote of Thanks</h3></div>
-            </div>
+        <section class="add-channel-section">
+            <h2>Add Your Channel</h2>
+            <form id="channelForm">
+                <div class="form-group">
+                    <label for="channelName">Channel Name</label>
+                    <input type="text" id="channelName" class="form-control" placeholder="Enter channel name" required>
+                </div>
+                <div class="form-group">
+                    <label for="channelDescription">Channel Description</label>
+                    <textarea id="channelDescription" class="form-control" rows="3" placeholder="Enter channel description"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="channelMembers">Members Count</label>
+                    <input type="number" id="channelMembers" class="form-control" placeholder="Enter number of members" min="0">
+                </div>
+                <button type="submit" class="add-btn">
+                    <i class="fas fa-plus-circle"></i> Add Channel
+                </button>
+            </form>
         </section>
 
+        <div class="channels-grid" id="channelsContainer">
+            <!-- Channel cards will be dynamically added here -->
+        </div>
+
         <footer>
-            <div class="closing-note">Thank you for being part of the Celebration</div>
-            <div id="footer-qr" class="footer-qr"></div>
+            <p>&copy; 2023 Telegram Channels Hub. All rights reserved.</p>
         </footer>
     </div>
 
     <script>
-        const currentUrl = window.location.href;
-
-        new QRCode(document.getElementById("header-qr"), {
-            text: currentUrl,
-            width: 100,
-            height: 100,
-            colorDark: "#8B4513",
-            colorLight: "#ffffff",
-            correctLevel: QRCode.CorrectLevel.H
-        });
-
-        new QRCode(document.getElementById("footer-qr"), {
-            text: currentUrl,
-            width: 120,
-            height: 120,
-            colorDark: "#8B4513",
-            colorLight: "#ffffff",
-            correctLevel: QRCode.CorrectLevel.H
-        });
-
-        // Animate timeline on scroll
-        document.addEventListener('DOMContentLoaded', function() {
-            const timelineItems = document.querySelectorAll('.timeline-item');
-            function checkVisibility() {
-                timelineItems.forEach(item => {
-                    const position = item.getBoundingClientRect();
-                    if(position.top < window.innerHeight - 100 && position.bottom >= 0) {
-                        item.classList.add('visible');
-                    }
-                });
+        // Sample channel data
+        const sampleChannels = [
+            {
+                name: "Tech News Daily",
+                description: "Latest technology news, updates, and insights from around the world.",
+                members: 12500
+            },
+            {
+                name: "Crypto Traders",
+                description: "Cryptocurrency market analysis, trading signals, and investment tips.",
+                members: 8700
+            },
+            {
+                name: "Web Dev Resources",
+                description: "Curated resources, tutorials, and tools for web developers of all levels.",
+                members: 15600
+            },
+            {
+                name: "Design Inspiration",
+                description: "Daily dose of UI/UX design inspiration, trends, and best practices.",
+                members: 9400
+            },
+            {
+                name: "Digital Marketing Hub",
+                description: "Strategies, tips, and updates for digital marketing professionals.",
+                members: 11200
+            },
+            {
+                name: "Freelance Opportunities",
+                description: "Find freelance gigs, remote jobs, and project opportunities.",
+                members: 18300
             }
-            checkVisibility();
-            window.addEventListener('scroll', checkVisibility);
+        ];
+
+        // Function to generate a random color for channel icons
+        function getRandomColor() {
+            const colors = [
+                '#0088cc', '#2aabee', '#3b5998', '#e4405f', 
+                '#cd201f', '#bd081c', '#ff5700', '#4c5fd7'
+            ];
+            return colors[Math.floor(Math.random() * colors.length)];
+        }
+
+        // Function to create a channel card
+        function createChannelCard(channel) {
+            const card = document.createElement('div');
+            card.className = 'channel-card';
+            
+            // Generate a unique icon for each channel
+            const iconColor = getRandomColor();
+            const iconLetter = channel.name.charAt(0).toUpperCase();
+            
+            card.innerHTML = `
+                <div class="channel-icon" style="background: ${iconColor}">
+                    ${iconLetter}
+                </div>
+                <h3 class="channel-name">${channel.name}</h3>
+                <p class="channel-description">${channel.description}</p>
+                <div class="members">
+                    <i class="fas fa-users"></i> ${channel.members.toLocaleString()} members
+                </div>
+                <button class="join-btn" onclick="joinChannel('${channel.name}')">
+                    <i class="fab fa-telegram"></i> Join Channel
+                </button>
+            `;
+            
+            return card;
+        }
+
+        // Function to handle joining a channel
+        function joinChannel(channelName) {
+            alert(`You're about to join ${channelName}! In a real application, this would redirect to Telegram.`);
+            // In a real implementation, this would redirect to the Telegram channel
+            // window.location.href = `https://t.me/${channelName}`;
+        }
+
+        // Function to add a new channel
+        function addNewChannel(event) {
+            event.preventDefault();
+            
+            const nameInput = document.getElementById('channelName');
+            const descriptionInput = document.getElementById('channelDescription');
+            const membersInput = document.getElementById('channelMembers');
+            
+            const newChannel = {
+                name: nameInput.value,
+                description: descriptionInput.value || 'No description provided.',
+                members: parseInt(membersInput.value) || 0
+            };
+            
+            // Add the new channel to the grid
+            const container = document.getElementById('channelsContainer');
+            const newCard = createChannelCard(newChannel);
+            container.appendChild(newCard);
+            
+            // Reset the form
+            document.getElementById('channelForm').reset();
+            
+            // Show success message
+            alert(`Channel "${newChannel.name}" has been added successfully!`);
+        }
+
+        // Initialize the page with sample channels
+        document.addEventListener('DOMContentLoaded', function() {
+            const container = document.getElementById('channelsContainer');
+            
+            // Add sample channels
+            sampleChannels.forEach(channel => {
+                const card = createChannelCard(channel);
+                container.appendChild(card);
+            });
+            
+            // Add event listener for the form
+            document.getElementById('channelForm').addEventListener('submit', addNewChannel);
         });
     </script>
 </body>
